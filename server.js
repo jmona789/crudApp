@@ -19,8 +19,10 @@ db.on('error', function(err) {
 });
 
 
-
 // Routes
+app.get('/', function(req, res){
+  res.sendfile('index.html');
+})
 
 
 //Save to DB
