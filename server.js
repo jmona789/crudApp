@@ -29,7 +29,11 @@ app.get('/', function(req, res){
 
 
 //Get from DB
-
+app.get('/notes', function(req, res){
+  db.notes.find({}, function(err, result){
+    res.send(result);
+  })
+});
 
 //Find One in DB
 //when searching by an id, the id needs to be passed in as (mongojs.ObjectId(IDYOUWANTTOFIND))
