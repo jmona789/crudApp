@@ -24,6 +24,12 @@ app.get('/', function(req, res){
   res.sendfile('index.html');
 })
 
+app.post('/makenew', function(req, res){
+  var newNote = req.body.note;
+  var title  = req.body.title;
+  db.notes.insert({"title": title, "note": newNote});
+})
+
 
 //Save to DB
 
